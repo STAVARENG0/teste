@@ -514,6 +514,295 @@ header.container {
   }
 }
 
+
+/* Layout das duas colunas com foto + modal */
+.columns.two-speakers {
+  display: grid;
+  gap: 20px;
+}
+
+/* Cada bloco (foto + modal) */
+.speaker-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.speaker-block figure {
+  width: 100%;
+  max-width: 280px;
+  margin: 0 auto 12px;
+  text-align: center;
+  background: rgba(0,0,0,.28);
+  padding: 10px;
+  border-radius: 14px;
+  border: 1px solid rgba(247,200,80,.22);
+}
+
+.speaker-block img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.speaker-block figcaption {
+  margin-top: 6px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* No desktop: 2 colunas lado a lado */
+@media (min-width: 768px) {
+  .columns.two-speakers {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+
+/* Container das duas colunas + "E" */
+.speakers-two {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: nowrap; /* não empilha no celular */
+  position: relative;
+}
+
+/* Cada bloco (foto + modal) */
+.speaker-block {
+  flex: 1 1 45%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.speaker-block figure {
+  width: 100%;
+  max-width: 260px;
+  margin: 0 auto 12px;
+  text-align: center;
+  background: rgba(0,0,0,.28);
+  padding: 10px;
+  border-radius: 14px;
+  border: 1px solid rgba(247,200,80,.22);
+}
+
+.speaker-block img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.speaker-block figcaption {
+  margin-top: 6px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* O "E" central */
+.speakers-two .amp {
+  font-weight: 900;
+  font-size: clamp(36px, 8vw, 100px);
+  line-height: 1;
+  background: linear-gradient(90deg, var(--gold1), var(--gold2), var(--gold3));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 20px rgba(255,204,0,.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 12px;
+  pointer-events: none;
+}
+
+
+/* Ajuste layout fotos + modais com "E" central */
+.speakers {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  position: relative;
+  flex-wrap: nowrap; /* mantém lado a lado */
+}
+
+.speaker-with-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 280px;
+}
+
+.speaker-with-modal figure {
+  width: 100%;
+  margin: 0 auto 10px;
+  text-align: center;
+  background: rgba(0,0,0,.28);
+  padding: 10px;
+  border-radius: 14px;
+  border: 1px solid rgba(247,200,80,.22);
+}
+
+.speaker-with-modal img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.speaker-with-modal figcaption {
+  margin-top: 6px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* O "E" central sobreposto */
+.speakers .amp {
+  font-weight: 900;
+  font-size: clamp(56px, 11vw, 130px);
+  line-height: 1;
+  background: linear-gradient(90deg, var(--gold1), var(--gold2), var(--gold3));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 20px rgba(255,204,0,.45);
+  position: absolute;
+  left: 50%;
+  top: 18%; /* ajusta sobre as fotos */
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Mobile: continua lado a lado, só reduz espaço */
+@media (max-width: 768px) {
+  .speakers {
+    gap: 10px;
+  }
+  .speaker-with-modal {
+    max-width: 45%;
+  }
+  .speakers .amp {
+    font-size: 56px;
+    top: 20%;
+  }
+}
+
+
+/* Faz os modais de baixo acompanharem a largura das fotos */
+.speaker-with-modal .pane.thin {
+  width: 100%;
+  max-width: 260px; /* mesma largura da foto */
+  text-align: center;
+}
+
+
+/* Garante que o texto não ultrapasse o modal no celular */
+.speaker-with-modal .pane.thin p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Títulos dentro dos modais de baixo na cor branca */
+.speaker-with-modal .pane.thin .sub-title {
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+
+/* Deixa o título "O que vai acontecer neste encontro" branco */
+section.card h2.section-title {
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+
+/* Fundo com a nova imagem no modal "O que vai acontecer" */
+#acontecer {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Aplica a foto de fundo */
+#acontecer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("ChatGPT Image 18 de set. de 2025, 05_01_49.png") center/cover no-repeat;
+  filter: brightness(0.6) contrast(1.05) saturate(1.1);
+  z-index: 0;
+}
+
+/* Overlay escuro por cima da foto, mantendo tema */
+#acontecer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.85) 0%,
+    rgba(45,21,4,0.75) 40%,
+    rgba(60,31,6,0.7) 100%
+  );
+  z-index: 1;
+}
+
+/* Conteúdo da seção por cima */
+#acontecer > * {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* Mobile: centraliza a mulher no fundo */
+@media (max-width: 768px) {
+  #acontecer::before {
+    background-position: center center !important;
+  }
+}
+
+
+/* Mobile: mostra a mulher inteira dentro do modal */
+@media (max-width: 768px) {
+  #acontecer::before {
+    background-size: contain !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+  }
+}
+
+
+/* Força a nova imagem a ocupar todo o modal em qualquer tela */
+#acontecer::before {
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+
+/* Overlay mais leve, sem marrom pesado */
+#acontecer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.5) 0%,
+    rgba(0,0,0,0.35) 40%,
+    rgba(0,0,0,0.5) 100%
+  );
+  z-index: 1;
+}
+
 </style>
 </head>
 <body>
@@ -541,32 +830,30 @@ header.container {
 <li>Financeiramente, sente-se presa a um ciclo de escassez, sem conseguir avançar e conquistar a vida que merece?</li>
 </ul>
 </section>
-<section class="card">
+<section class="card" id="acontecer">
 <h2 class="section-title">O que vai acontecer neste encontro</h2>
-<div class="columns" style="grid-template-columns: 1fr; gap:18px">
-<div class="pane thin" style="padding:16px 16px">
-<h3 class="sub-title" style="margin-top:0">Despertar o Poder Interior Feminino</h3>
+<div class="speakers">
+<!-- Marluy -->
+<div class="speaker-with-modal">
+<figure>
+<img alt="Marluy Lavecchia" src="IMG_20250910_180031.jpg"/>
+<figcaption>Marluy Lavecchia</figcaption>
+</figure>
+<h3 class="sub-title">Despertar o Poder Interior Feminino</h3>
 <p>Conduzido por <b>Marluy Lavecchia</b>, Especialista em Desenvolvimento Humano e Organizacional.
-        Você vai aprender a liberar bloqueios emocionais, resgatar sua força e ativar a mulher poderosa que já existe dentro de você.</p>
+      Você vai aprender a liberar bloqueios emocionais, resgatar sua força e ativar a mulher poderosa que já existe dentro de você.</p>
 </div>
-<div class="pane thin" style="padding:16px 16px">
-<h3 class="sub-title" style="margin-top:0">Beleza e Autoestima na Prática</h3>
+<!-- O "E" central -->
+<span class="amp">&amp;</span>
+<!-- Sumara -->
+<div class="speaker-with-modal">
+<figure>
+<img alt="Sumara Richelle" src="IMG_20250910_180053.jpg"/>
+<figcaption>Sumara Richelle</figcaption>
+</figure>
+<h3 class="sub-title">Beleza e Autoestima na Prática</h3>
 <p>Com <b>Sumara Richelle</b>, você vai descobrir como pequenos detalhes elevam sua autoestima
-        e fazem você se sentir ainda mais linda e confiante.</p>
-</div>
-</div>
-<div class="columns" style="margin-top:18px; gap:18px">
-<div class="pane thin" style="text-align:center">
-<div style="font-size:28px; font-weight:800; color: var(--gold2); line-height:1">6h</div>
-<div style="color: var(--text-soft)">de experiência presencial</div>
-</div>
-<div class="pane thin" style="text-align:center">
-<div style="font-size:20px; font-weight:800; color: var(--gold2); line-height:1">Atenção</div>
-<div style="color: var(--text-soft)">grupo com vagas limitadas</div>
-</div>
-<div class="pane thin" style="text-align:center">
-<div style="font-size:20px; font-weight:800; color: var(--gold2); line-height:1">Bônus</div>
-<div style="color: var(--text-soft)">mimo surpresa para você</div>
+      e fazem você se sentir ainda mais linda e confiante.</p>
 </div>
 </div>
 </section>

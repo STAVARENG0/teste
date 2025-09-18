@@ -1087,6 +1087,162 @@ section.card h2.section-title {
 }
 
 
+
+
+
+
+/* === Formulário de Inscrição com imagem de alta qualidade === */
+#form-inscricao {
+  position: relative;
+  overflow: hidden;
+}
+
+#form-inscricao::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(
+      180deg,
+      rgba(45, 21, 4, 0.85) 0%,
+      rgba(60, 31, 6, 0.75) 40%,
+      rgba(0, 0, 0, 0.6) 100%
+    ),
+    url("ChatGPT Image 18 de set. de 2025, 07_35_07.png") center/cover no-repeat;
+  filter: brightness(1.05) contrast(1.05) saturate(1.15);
+  z-index: 0;
+}
+
+#form-inscricao > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Mobile: foca no centro da imagem */
+@media (max-width: 768px) {
+  #form-inscricao::before {
+    background: 
+      linear-gradient(
+        180deg,
+        rgba(45, 21, 4, 0.85) 0%,
+        rgba(60, 31, 6, 0.7) 40%,
+        rgba(0, 0, 0, 0.6) 100%
+      ),
+      url("ChatGPT Image 18 de set. de 2025, 07_35_07.png") center top/cover no-repeat !important;
+  }
+}
+
+
+/* === Modal Bônus Especial com imagem === */
+#bonus {
+  position: relative;
+  overflow: hidden;
+}
+
+#bonus::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(
+      180deg,
+      rgba(45, 21, 4, 0.85) 0%, 
+      rgba(60, 31, 6, 0.75) 40%, 
+      rgba(0, 0, 0, 0.6) 100%
+    ),
+    url("ChatGPT Image 18 de set. de 2025, 07_37_41.png") center/cover no-repeat;
+  filter: brightness(1.05) contrast(1.05) saturate(1.1);
+  z-index: 0;
+}
+
+#bonus::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35); /* overlay suave */
+  z-index: 1;
+}
+
+#bonus > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Mobile: centraliza a imagem */
+@media (max-width: 768px) {
+  #bonus::before {
+    background: 
+      linear-gradient(
+        180deg,
+        rgba(45, 21, 4, 0.85) 0%, 
+        rgba(60, 31, 6, 0.7) 40%, 
+        rgba(0, 0, 0, 0.6) 100%
+      ),
+      url("ChatGPT Image 18 de set. de 2025, 07_37_41.png") center top/cover no-repeat !important;
+  }
+}
+
+
+/* === Modal Vagas Limitadas com imagem === */
+#inscricao {
+  position: relative;
+  overflow: hidden;
+}
+
+#inscricao::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: 
+    linear-gradient(
+      180deg,
+      rgba(45, 21, 4, 0.85) 0%, 
+      rgba(60, 31, 6, 0.7) 40%, 
+      rgba(0, 0, 0, 0.55) 100%
+    ),
+    url("ChatGPT Image 18 de set. de 2025, 07_40_17.png") center/cover no-repeat;
+  filter: brightness(1.15) contrast(1.05) saturate(1.1);
+  z-index: 0;
+}
+
+#inscricao > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Mobile: foca nos girassóis */
+@media (max-width: 768px) {
+  #inscricao::before {
+    background: 
+      linear-gradient(
+        180deg,
+        rgba(45, 21, 4, 0.85) 0%, 
+        rgba(60, 31, 6, 0.7) 40%, 
+        rgba(0, 0, 0, 0.55) 100%
+      ),
+      url("ChatGPT Image 18 de set. de 2025, 07_40_17.png") center top/cover no-repeat !important;
+  }
+}
+
+
+/* Ajuste título do modal Vagas Limitadas */
+#inscricao h2.section-title {
+  color: #ffffff;
+  text-align: center;
+  font-size: clamp(26px, 5vw, 36px);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+
+/* Ajuste título do modal Vagas Limitadas */
+#inscricao h2.section-title {
+  color: #ffffff;
+  text-align: center;
+  font-size: clamp(26px, 5vw, 36px);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  margin-bottom: 18px;
+}
+
 </style>
 </head>
 <body>
@@ -1152,7 +1308,7 @@ section.card h2.section-title {
 <li>Com a autoestima renovada, pronta para olhar no espelho e dizer: “Eu sou incrível, eu posso, eu mereço!”</li>
 </ul>
 </section>
-<section class="card">
+<section class="card" id="bonus">
 <h2 class="section-title">Bônus Especial</h2>
 <p class="section-sub">Todas as participantes receberão um mimo surpresa preparado com muito carinho para lembrar desse dia como um marco de transformação.</p>
 </section>
@@ -1165,11 +1321,13 @@ section.card h2.section-title {
 </div><div class="btn-row"><a class="btn-gold" href="#" title="Abrir no Google Maps">Como chegar</a></div>
 </section>
 <section class="card" id="inscricao">
-<p><b>Vagas limitadas!</b> Queremos um encontro personalizado, especial, onde cada mulher receba atenção única. 
+<h2 class="section-title">Vagas limitadas!</h2>
+<div class="pane thin">
+<p>Queremos um encontro personalizado, especial, onde cada mulher receba atenção única. 
     Por isso, as vagas são extremamente limitadas. Compras com antecedência têm <b>20% de desconto!</b></p>
 <p>Essa é sua oportunidade de viver mais leve, como uma pessoa melhor, seja por você mesma ou pelas pessoas que você ama!</p>
 </section>
-<section class="card">
+<section class="card" id="form-inscricao">
 <h2 class="section-title">Inscreva-se agora e garanta seu lugar</h2>
 <form style="margin-top:18px; text-align:left;">
 <label>Nome:<br/><input name="nome" required="" style="width:100%; padding:8px; border-radius:6px; border:1px solid #ccc; margin-bottom:10px" type="text"/></label><br/>

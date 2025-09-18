@@ -803,6 +803,160 @@ section.card h2.section-title {
   z-index: 1;
 }
 
+
+
+
+
+
+
+/* === Modal "Você vai sair deste evento" === */
+#saida {
+  position: relative;
+  overflow: hidden;
+}
+
+#saida::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("ChatGPT Image 18 de set. de 2025, 05_48_05.png") center/cover no-repeat;
+  filter: brightness(0.9) contrast(1.05) saturate(1.15);
+  z-index: 0;
+}
+
+#saida::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45); /* overlay mais leve */
+  z-index: 1;
+}
+
+#saida > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Mobile: garante a Ju inteira */
+@media (max-width: 768px) {
+  #saida::before {
+    background-size: contain !important;
+    background-position: center top !important;
+    background-repeat: no-repeat !important;
+  }
+}
+
+
+/* === Modal "Você vai sair deste evento" === */
+#saida {
+  position: relative;
+  overflow: hidden;
+}
+
+#saida::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("ChatGPT Image 18 de set. de 2025, 05_48_05.png") center/cover no-repeat;
+  filter: brightness(0.9) contrast(1.05) saturate(1.15);
+  z-index: 0;
+}
+
+#saida::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45); /* overlay leve */
+  z-index: 1;
+}
+
+#saida > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Mobile: cobre todo o modal sem cortar pela metade */
+@media (max-width: 768px) {
+  #saida::before {
+    background-size: cover !important;
+    background-position: top center !important;
+  }
+}
+
+
+/* === Modal "Você vai sair deste evento" === */
+#saida {
+  position: relative;
+  overflow: hidden;
+}
+
+#saida::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("ChatGPT Image 18 de set. de 2025, 05_48_05.png") center/cover no-repeat;
+  filter: brightness(1.15) contrast(1.05) saturate(1.1);
+  z-index: 0;
+}
+
+#saida::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45); /* overlay leve */
+  z-index: 1;
+}
+
+#saida > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Mobile: cobre todo o modal sem cortar pela metade */
+@media (max-width: 768px) {
+  #saida::before {
+    background-size: cover !important;
+    background-position: top center !important;
+  }
+}
+
+
+/* === Modal "Você vai sair deste evento" === */
+#saida {
+  position: relative;
+  overflow: hidden;
+}
+
+#saida::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("ChatGPT Image 18 de set. de 2025, 05_48_05.png") center 20%/cover no-repeat;
+  filter: brightness(1.15) contrast(1.05) saturate(1.1);
+  z-index: 0;
+}
+
+#saida::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45); /* overlay leve */
+  z-index: 1;
+}
+
+#saida > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Mobile: cobre todo o modal mas com foco um pouco mais alto */
+@media (max-width: 768px) {
+  #saida::before {
+    background-size: cover !important;
+    background-position: center 15% !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -857,7 +1011,7 @@ section.card h2.section-title {
 </div>
 </div>
 </section>
-<section class="card">
+<section class="card modal-saida" id="saida">
 <h2 class="section-title">Você vai sair deste evento</h2>
 <ul class="list">
 <li>Sentindo-se mais segura de si mesma.</li>

@@ -957,6 +957,136 @@ section.card h2.section-title {
   }
 }
 
+
+#local .local-img {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  margin-bottom: 18px;
+}
+
+#local .local-img img {
+  width: 100%;
+  display: block;
+  border-radius: 14px;
+  filter: brightness(1.1) contrast(1.05);
+}
+
+#local .local-img .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.55) 0%,
+    rgba(0,0,0,0.35) 40%,
+    rgba(0,0,0,0.55) 100%
+  );
+  border-radius: 14px;
+}
+
+#local .local-img .section-title {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+}
+
+
+#local {
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  color: #fff;
+  text-align: center;
+}
+
+
+#local::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("ChatGPT Image 18 de set. de 2025, 06_58_31.png") center/cover no-repeat;
+  filter: brightness(1.2) contrast(1.05) saturate(1.1); /* mais claro */
+  z-index: 0;
+  border-radius: 14px;
+}
+
+
+
+#local::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.55) 0%,
+    rgba(0,0,0,0.45) 40%,
+    rgba(0,0,0,0.65) 100%
+  );
+  z-index: 1;
+  border-radius: 14px;
+}
+
+
+#local > * {
+  position: relative;
+  z-index: 2;
+}
+
+#local h2.section-title {
+  font-size: clamp(22px, 5vw, 32px);
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  margin-bottom: 20px;
+}
+
+#local .pills {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0 auto 20px;
+}
+
+
+
+#local .pill {
+  background: rgba(0,0,0,0.5); /* um pouco mais transparente */
+  border: 1px solid rgba(247,200,80,0.35);
+  border-radius: 12px;
+  color: #fff; /* texto branco para contraste */
+  font-weight: 600;
+  padding: 10px 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.45);
+  text-align: center; /* centralizar texto */
+  justify-content: center; /* centralizar flex */
+}
+
+
+
+#local .btn-row {
+  margin-top: 12px;
+}
+
+
+
+#local .pane.thin {
+  background: rgba(0,0,0,0.55); /* menos transparente */
+  border: 1px solid rgba(247,200,80,0.35);
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin: 12px auto;
+  text-align: center;
+  color: #fff; /* texto branco para maior contraste */
+  font-size: clamp(14px, 2.6vw, 18px);
+  max-width: 620px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.45);
+}
+
+
 </style>
 </head>
 <body>
@@ -1026,14 +1156,13 @@ section.card h2.section-title {
 <h2 class="section-title">Bônus Especial</h2>
 <p class="section-sub">Todas as participantes receberão um mimo surpresa preparado com muito carinho para lembrar desse dia como um marco de transformação.</p>
 </section>
-<section class="card">
-<h2 class="section-title">Data e Local</h2>
+<section class="card" id="local">
+  <h2 class="section-title">Data e Local</h2>
 <div aria-label="Informações do evento" class="pills" role="list">
 <span class="pill" role="listitem"><span class="dot"></span><strong>26 de outubro de 2025</strong> • 10h às 16h</span>
 <span class="pill" role="listitem"><span class="dot"></span>Lady Gregory Hotel · Gort, Irlanda</span>
 <span class="pill" role="listitem"><span class="dot"></span>Com <strong>Marluy Lavecchia</strong> + <strong>Sumara Richelle</strong></span>
-</div>
-<div class="btn-row"><a class="btn-gold" href="#" title="Abrir no Google Maps">Como chegar</a></div>
+</div><div class="btn-row"><a class="btn-gold" href="#" title="Abrir no Google Maps">Como chegar</a></div>
 </section>
 <section class="card" id="inscricao">
 <p><b>Vagas limitadas!</b> Queremos um encontro personalizado, especial, onde cada mulher receba atenção única. 
